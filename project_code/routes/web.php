@@ -23,3 +23,8 @@ Route::controller(TodoController::class)->group(function(){
     Route::put('/todos/{id}', 'update');
     Route::delete('/todos/{id}', 'delete');
 });
+
+// -- if page not exists then it works
+Route::fallback(function () {
+    return view('errors.404');
+ });
